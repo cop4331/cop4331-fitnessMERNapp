@@ -3,8 +3,11 @@ import axios from "axios";
 import "./forum.css";
 import Linkify from "react-linkify";
 
-var userdata = JSON.parse(window.localStorage.getItem("user_data"));
-var username = userdata.firstName;
+var tempuser = window.localStorage.getItem("user_data");
+if (tempuser) {
+  var userdata = JSON.parse(tempuser);
+  var username = userdata.firstName;
+} else var username = "";
 
 class ForumPage extends React.Component {
   state = {
