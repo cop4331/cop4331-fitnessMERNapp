@@ -4,9 +4,12 @@ import "./forum.css";
 import Linkify from "react-linkify";
 
 var tempuser = window.localStorage.getItem("user_data");
+var userID;
+var accessToken;
 if (tempuser) {
   var userdata = JSON.parse(tempuser);
-  var username = userdata.firstName;
+  userID = userdata.id;
+  accessToken = userdata.access_token;
 } else var username = "";
 
 class ForumPage extends React.Component {
@@ -22,7 +25,7 @@ class ForumPage extends React.Component {
 
   getBlogPost = () => {
     axios
-      .get("/api")
+      .get("http://my-gym-pro.herokuapp.com/api/getallposts")
       .then((response) => {
         const data = response.data;
         this.setState({ posts: data });
@@ -44,15 +47,17 @@ class ForumPage extends React.Component {
   submit = (event) => {
     event.preventDefault();
     const payload = {
-      user: username,
-      // title: this.state.title,
-      body: this.state.body,
+      userID: userID,
+      title: "dummy",
+      description: this.state.body,
+      date:"dummy"
     };
 
     axios({
-      url: "/api/save",
+      url: "http://my-gym-pro.herokuapp.com/api/createpost",
       method: "POST",
       data: payload,
+      headers: {'Content-Type':'application/json', 'Authorization':'Bearer ' + accessToken}
     })
       .then(() => {
         console.log("data sent to server");
@@ -76,9 +81,9 @@ class ForumPage extends React.Component {
 
     return posts.map((post, index) => (
       <div key={index} className="blog-post-display">
-        <h3>{post.user}:</h3>
+        // <h3>{post.user}:</h3>
         <Linkify>
-          <p>{post.body}</p>
+          <p>{post.description}</p>
         </Linkify>
       </div>
     ));
