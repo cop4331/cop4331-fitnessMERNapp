@@ -81,7 +81,7 @@ class ForumPage extends React.Component {
     
     if (!this.state.Posts.length) {
       console.log("error null posts arr", this.state.posts);
-      return null;
+      //return null;
     }
     console.log("display blog post");
     return Object.keys(this.state.posts).map((post, index) => (
@@ -101,7 +101,7 @@ class ForumPage extends React.Component {
   };
 
   render() {
-    console.log("State: ", this.state.posts);
+    console.log("State: ", this.state);
     //jsx
     return (
       <div className="app">
