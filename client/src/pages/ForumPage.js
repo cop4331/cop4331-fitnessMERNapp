@@ -77,12 +77,12 @@ class ForumPage extends React.Component {
   };
 
   displayBlogPost = (posts) => {
-    //posts = object.keys(this.state.posts);
     
-//     if (!posts.length) {
-//       console.log("error null posts arr", posts);
-//       return null;
-//     }
+    
+     if (!posts.length) {
+       console.log("error null posts arr", posts);
+       return null;
+     }
 //     console.log("display blog post");
     
 //     const items = []
@@ -132,6 +132,8 @@ class ForumPage extends React.Component {
 
   render() {
     console.log("State: ", this.state);
+    console.log("State: ", this.state.posts.posts);
+    
     //jsx
     return (
       <div className="app">
