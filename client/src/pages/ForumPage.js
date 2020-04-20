@@ -102,15 +102,27 @@ class ForumPage extends React.Component {
 //         {items}
 //     </div>
     
-    return Object.keys(posts.posts).map((index) => (
-      <div key={index} className="blog-post-display">
-        <h3>{posts.posts[index].userID}:</h3>
+    const name = Object.keys(posts.posts.userID).map((index) => (
+      <div key={index}>
+        <h3>{posts.posts.userID[index]}:</h3>
+      </div>
+   ));
+    
+   const post = Object.keys(posts.posts.description).map((index) => (
+      <div key={index}>
         <Linkify>
           //console.log("display description");
-          <p>{posts.posts[index].description}</p>
+          <p>{posts.posts.description[index]}</p>
         </Linkify>
       </div>
    ));
+    
+    return (
+      <div className="blog-post-display">
+      {name}
+      {post}
+      </div>
+    )
   };
 
   doLogout = (event) => {
