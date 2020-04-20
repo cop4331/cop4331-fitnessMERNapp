@@ -28,7 +28,7 @@ class ForumPage extends React.Component {
       .get("http://my-gym-pro.herokuapp.com/api/getallposts")
       .then((response) => {
         const data = response.data;
-        this.setState({ posts: JSON.stringify(data.Posts) });
+        this.setState({ posts: data.Posts });
         console.log("data received");
       })
       .catch(() => {
@@ -86,7 +86,7 @@ class ForumPage extends React.Component {
 
     
   
-    return JSON.parse(posts).map((post, index) => (
+    return posts.map((post, index) => (
       <div key={index} className="blog-post-display">
         <h3>{post.user}:</h3>
         <Linkify>
