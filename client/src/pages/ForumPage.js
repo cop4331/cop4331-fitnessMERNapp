@@ -27,7 +27,7 @@ class ForumPage extends React.Component {
     axios
       .get("http://my-gym-pro.herokuapp.com/api/getallposts")
       .then((response) => {
-        const data = JSON.parse(response.data);
+        const data = response.data;
         this.setState({ posts: data });
         console.log("data received");
       })
