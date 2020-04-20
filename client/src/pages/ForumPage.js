@@ -84,14 +84,31 @@ class ForumPage extends React.Component {
       return null;
     }
     console.log("display blog post");
-    return posts.Posts.map((post, index) => (
-      <div key={index} className="blog-post-display">
+    
+    const items = []
+    
+    for (const [index, post] of posts.entries()) {
+      items.push(
+       <div key={index} className="blog-post-display">
         <h3>{post.userID}:</h3>
         <Linkify>
-          //console.log("display description");
-          <p>{post.description}</p>
-        </Linkify>
-      </div>
+           //console.log("display description");
+           <p>{post.description}</p>
+         </Linkify>
+       </div>
+      )
+    }
+    <div>
+        {items}
+    </div>
+//     return posts.map(post, index) => (
+//       <div key={index} className="blog-post-display">
+//         <h3>{post.userID}:</h3>
+//         <Linkify>
+//           //console.log("display description");
+//           <p>{post.description}</p>
+//         </Linkify>
+//       </div>
     ));
   };
 
