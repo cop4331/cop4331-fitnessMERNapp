@@ -80,7 +80,7 @@ class ForumPage extends React.Component {
     
     
      if (!posts.length) {
-       console.log("error null posts arr", posts);
+       //console.log("error null posts arr", posts);
        return null;
      }
 //     console.log("display blog post");
@@ -132,7 +132,7 @@ class ForumPage extends React.Component {
 
   render() {
     console.log("State: ", this.state);
-    console.log("State/object: ", this.state.posts.Posts[0]);
+    console.log("State/object: ", this.state.posts[0]);
     
     //jsx
     return (
