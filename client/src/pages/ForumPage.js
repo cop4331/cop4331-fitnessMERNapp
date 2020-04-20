@@ -88,9 +88,9 @@ class ForumPage extends React.Component {
   
     return posts.map((post, index) => (
       <div key={index} className="blog-post-display">
-        <h3>{post.user}:</h3>
+        <h3>{post.userID}:</h3>
         <Linkify>
-          <p>{post.body}</p>
+          <p>{post.description}</p>
         </Linkify>
       </div>
     ));
@@ -124,8 +124,8 @@ class ForumPage extends React.Component {
   };
 
   render() {
-    console.log("State: ", this.state);
-    //console.log("State/posts: ", this.state.posts);
+    //console.log("State: ", this.state);
+    console.log("State/posts: ", this.state.posts);
     
     //jsx
     return (
