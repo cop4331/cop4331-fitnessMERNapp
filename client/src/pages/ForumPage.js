@@ -79,9 +79,8 @@ class ForumPage extends React.Component {
   displayBlogPost = (posts) => {
     if (!posts.length) return null;
 
-    return posts.map((post, index) => (
-      <div key={index} className="blog-post-display">
-        <h3>test</h3>
+    return posts.map((post) => (
+      <div className="blog-post-display">
         <h3>{post.userID}:</h3>
         <Linkify>
           <p>{post.description}</p>
