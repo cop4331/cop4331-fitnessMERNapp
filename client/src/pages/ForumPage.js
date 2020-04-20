@@ -107,7 +107,7 @@ class ForumPage extends React.Component {
       <div className="app">
         <h2 className="title">Welcome to the Forum.</h2>
         
-        <div classname="blog-">{this.displayBlogPost(this.state.posts)}</div>
+        <div classname="blog-">{this.displayBlogPost(this.state.posts.posts)}</div>
         <div className="user">
           <div className="signedinas">Signed in as: </div>
           <div className="profile">{userID}</div>
