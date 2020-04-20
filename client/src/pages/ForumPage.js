@@ -125,7 +125,7 @@ class ForumPage extends React.Component {
 
   render() {
     console.log("State: ", this.state);
-    console.log("State/posts: ", this.state.posts.Posts);
+    console.log("State/posts: ", this.state.posts);
     
     //jsx
     return (
