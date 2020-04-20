@@ -78,7 +78,7 @@ class ForumPage extends React.Component {
 
   displayBlogPost = (posts) => {
     if (!posts.length) {
-      console.log("error null posts arr");
+      console.log("error null posts arr", {posts});
       return null;
     }
     console.log("display blog post");
@@ -100,7 +100,6 @@ class ForumPage extends React.Component {
 
   render() {
     console.log("State: ", this.state);
-    console.log("test");
     //jsx
     return (
       <div className="app">
