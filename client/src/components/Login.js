@@ -9,36 +9,49 @@ function Login(props) {
   const doLogin = async (event) => {
     event.preventDefault();
 
-    // var js =
-    //   '{"login":"' +
-    //   loginName.value +
-    //   '","password":"' +
-    //   loginPassword.value +
-    //   '"}';
-
-    try {
-      // const response = await fetch("http://localhost:8080/api/login", {
-      //   method: "POST",
-      //   body: js,
-      //   headers: { "Content-Type": "application/json" },
-      //});
-
-      // var res = JSON.parse(await response.text());
-
-      // if (res.id <= 0) {
-      if (false) {
-        setMessage("User/Password combination incorrect");
-      } else {
+      var body = '{"username":"' + loginName.value + '","password":"' + loginPassword.value + '"}';
+    var xhr = new XMLHttpRequest();
+	xhr.open("POST", "http://my-gym-pro.herokuapp.com/api/login", true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+       try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				var res = JSON.parse(xhr.responseText);
+      
+      if (res.Error == 'Username does not exist.')
+      {
+        setMessage("Username does not exist.");
+        return;
+      }
+      if (res.Error == 'Incorrect password.')
+      {
+        setMessage('Incorrect password.');
+        return;
+      }
+      if (res.Error == 'Email has not been verified.')
+      {
+        setMessage('Email has not been verified.');
+        return;
+      }
+      
         var user = {
-          firstName: "Austin", //res.firstName,
-          // lastName: res.lastName,
-          // id: res.id,
+          username: loginName.value,
+          id: res.id,
+          access_token: res.AccessToken
         };
+        
         localStorage.setItem("user_data", JSON.stringify(user));
 
         setMessage("");
         window.location.href = "/access";
-      }
+			}
+		};
+		xhr.send(body);
+
+       
     } catch (e) {
       alert(e.toString());
       return;
