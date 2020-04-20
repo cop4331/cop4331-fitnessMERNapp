@@ -25,9 +25,9 @@ class ForumPage extends React.Component {
 
   getBlogPost = () => {
     axios
-      .get("http://my-gym-pro.herokuapp.com/api/getallposts")
+      .get("http://my-gym-pro.herokuapp.com/api/getallposts/save")
       .then((response) => {
-        const data = response.Posts;
+        const data = response.data;
         this.setState({ posts: data });
         console.log("data received");
       })
