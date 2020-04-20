@@ -1,18 +1,46 @@
 body {
-  background-color: #707070;
+  /*
+  background-color: rgb(40, 126, 34);
+  */
+  background: linear-gradient(to right, #51e48e, #0ead23);
 }
 
 #title {
   font-size: 40px;
-  width: 100%;
+  width: 25%;
+  margin-left: 37%;
   text-align: center;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Calibri';
   color: #ffffff;
 }
 
+/*
+.loginDiv {
+  width: 100%;
+  height: 56px;
+  position: relative;
+  padding: 0px 16px;
+  border: solid;
+  border-radius: 4px;
+  font-family: 'Gotham SSm A', 'Gotham SSm B', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  background-color: black;
+  color: #282828;
+  outline: none;
+  box-shadow: 0px 4px 20px 0px;
+  transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out;
+  -webkit-appearance: none;
+}
+*/
+
+/*
 #loginDiv {
   font-size: 30px;
-  width: 100%;
+  width: 50%;
+  border-radius: 10%;
+  margin-left: 25%;
   align-self: center;
   align-content: center;
   align-items: center;
@@ -20,6 +48,8 @@ body {
   padding: 0px;
   background-color: #b2b2b2;
 }
+*/
+
 
 #loggedInDiv {
   font-size: 30px;
@@ -28,6 +58,7 @@ body {
   padding: 25px;
   background-color: #b2b2b2;
 }
+
 
 #accessUIDiv {
   font-size: 30px;
@@ -38,15 +69,16 @@ body {
 }
 
 .buttons {
+  color: rgb(123, 136, 122);
+  background-color: rgb(255, 255, 255);
   font-size: 30px;
-  border-radius: 25px;
-  width: 50%;
-  margin-left: 25%;
+  border-radius: 10px;
+  width: 80px;
   font-family: "Ubuntu", sans-serif;
 }
 
 .buttons:hover {
-  background-color: #00d5124f;
+  background-color: #0000004f;
   color: #ffffff;
   opacity: 50%;
 }
@@ -64,14 +96,49 @@ body {
   font-size: 30px;
 }
 
+#loginButton {
+  margin-left: 00%;
+  color: rgb(14, 230, 147);
+  border: none;
+  border-radius: 2px;
+  width: 25%;
+  margin-left: 37%;
+  box-shadow: 0px 4px 20px 0px;
+}
+
 input[type="text"],
 input[type="password"] {
-  border-radius: 25px;
+  border-radius: 2px;
+  border: none;
+  color: "red";
+  background-color: #92d9a7;
   text-align: center;
-  width: 80%;
-  margin-left: 10%;
+  width: 25%;
+  margin-left: 37%;
   margin-bottom: 2%;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Calibri";
+}
+
+#createNotice {
+  text-align: center;
+  font-size: 15px;
+  margin-left: 44.5%;
+  color: white;
+}
+
+#blog- {
+  width: 100%;
+  margin-left: 18%;
+  border: none;
+  /* background: linear-gradient(to right, #51e48e, #0ead23);*/
+}
+
+#form-input {
+  margin-bottom: 0%;
+}
+
+#submit {
+  color: red;
 }
 
 #inner-title {
@@ -98,7 +165,7 @@ input[type="password"] {
 
 #userName {
   display: inline-block;
-  width: 80%;
+  width: 20%;
   margin-left: 10%;
   text-align: center;
 }
