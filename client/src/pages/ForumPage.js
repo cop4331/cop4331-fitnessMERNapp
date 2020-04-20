@@ -10,7 +10,7 @@ if (tempuser) {
   var userdata = JSON.parse(tempuser);
   userID = userdata.id;
   accessToken = userdata.access_token;
-} else var UserID = "";
+} else var userID = "";
 
 class ForumPage extends React.Component {
   state = {
@@ -104,7 +104,7 @@ class ForumPage extends React.Component {
         <div classname="blog-">{this.displayBlogPost(this.state.posts)}</div>
         <div className="user">
           <div className="signedinas">Signed in as: </div>
-          <div className="profile">{UserID}</div>
+          <div className="profile">{userID}</div>
         </div>
         <form onSubmit={this.submit}>
           {/* <div className="form-input">
