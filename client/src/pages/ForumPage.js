@@ -81,11 +81,11 @@ class ForumPage extends React.Component {
     
     if (!posts.length) {
       console.log("error null posts arr", posts);
-      return null;
+     // return null;
     }
     console.log("display blog post");
     return posts[0].map((post, index) => (
-      <div key={index} className="blog-post-display">
+      <div key={post.post} className="blog-post-display">
         <h3>{post.userID}:</h3>
         <Linkify>
           console.log("display description");
