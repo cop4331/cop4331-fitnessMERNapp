@@ -8,7 +8,7 @@ var userID;
 var accessToken;
 if (tempuser) {
   var userdata = JSON.parse(tempuser);
-  userID = userdata.id;
+  userID = userdata.username;
   accessToken = userdata.access_token;
 } else var userID = "";
 
