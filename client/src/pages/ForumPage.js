@@ -82,47 +82,40 @@ class ForumPage extends React.Component {
      //if (posts.Posts.length) {
        //console.log("error null posts arr", posts);
        return null;
-     }
-//     console.log("display blog post");
+    // }
+
     
-//     const items = []
-    
-//     for (const [index, post] of posts.entries()) {
-//       items.push(
-//        <div key={index} className="blog-post-display">
-//         <h3>{post.userID}:</h3>
-//         <Linkify>
-//            //console.log("display description");
-//            <p>{post.description}</p>
-//          </Linkify>
-//        </div>
-//       )
-//     }
-//     <div>
-//         {items}
-//     </div>
-    
-    const name = Object.keys(posts.posts.userID).map((index) => (
-      <div key={index}>
-        <h3>{posts.posts.userID[index]}:</h3>
-      </div>
-   ));
-    
-   const post = Object.keys(posts.posts.description).map((index) => (
-      <div key={index}>
+  
+    return posts.Posts.map((post, index) => (
+      <div key={index} className="blog-post-display">
+        <h3>{post.user}:</h3>
         <Linkify>
-          //console.log("display description");
-          <p>{posts.posts.description[index]}</p>
+          <p>{post.body}</p>
         </Linkify>
       </div>
-   ));
+    ));
     
-    return (
-      <div className="blog-post-display">
-      {name}
-      {post}
-      </div>
-    )
+//     const name = Object.keys(posts.posts.userID).map((index) => (
+//       <div key={index}>
+//         <h3>{posts.posts.userID[index]}:</h3>
+//       </div>
+//    ));
+    
+//    const post = Object.keys(posts.posts.description).map((index) => (
+//       <div key={index}>
+//         <Linkify>
+//           //console.log("display description");
+//           <p>{posts.posts.description[index]}</p>
+//         </Linkify>
+//       </div>
+//    ));
+    
+//     return (
+//       <div className="blog-post-display">
+//       {name}
+//       {post}
+//       </div>
+//     )
   };
 
   doLogout = (event) => {
