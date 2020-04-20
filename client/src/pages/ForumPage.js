@@ -79,12 +79,12 @@ class ForumPage extends React.Component {
   displayBlogPost = (posts) => {
     //posts = object.keys(this.state.posts);
     
-    if (!posts.length) {
-      console.log("error null posts arr", posts);
+    if (!posts.Posts.length) {
+      console.log("error null posts arr", posts.Posts);
       return null;
     }
     console.log("display blog post");
-    return posts.map((post, index) => (
+    return posts.Posts.map((post, index) => (
       <div key={index} className="blog-post-display">
         <h3>{post.userID}:</h3>
         <Linkify>
@@ -107,7 +107,7 @@ class ForumPage extends React.Component {
       <div className="app">
         <h2 className="title">Welcome to the Forum.</h2>
         
-        <div classname="blog-">{this.displayBlogPost(this.state.posts.posts)}</div>
+        <div classname="blog-">{this.displayBlogPost(this.state.posts)}</div>
         <div className="user">
           <div className="signedinas">Signed in as: </div>
           <div className="profile">{userID}</div>
