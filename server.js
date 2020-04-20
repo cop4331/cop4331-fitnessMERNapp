@@ -8,14 +8,13 @@ const BlogPost = require("./models/blogPost");
 const app = express();
 const PORT = process.env.PORT || 8080; //step 1
 
-const routes = require("./routes/api");
 /*
 const MONGODB_URI =
   "mongodb+srv://aus:Citizen100@mygympro-l1gbg.mongodb.net/test?retryWrites=true&w=majority";
 //mongodb+srv://aus:Citizen100@mygympro-l1gbg.mongodb.net/test?retryWrites=true&w=majority
 */
 //step 2
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/myGymPro", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://mainaccess:securepassword@cop4331-large-project-l2dqk.mongodb.net/MyGymPro?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -47,7 +46,6 @@ newBlogPost.save((error) => {
 
 //http request logger
 app.use(morgan("tiny"));
-app.use("/api", routes);
 
 //step 3
 if (process.env.NODE_ENV === "production") {
