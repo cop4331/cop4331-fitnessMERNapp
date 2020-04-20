@@ -104,7 +104,7 @@ class ForumPage extends React.Component {
         <div classname="blog-">{this.displayBlogPost(this.state.posts)}</div>
         <div className="user">
           <div className="signedinas">Signed in as: </div>
-          <div className="profile">{username}</div>
+          <div className="profile">{UserID}</div>
         </div>
         <form onSubmit={this.submit}>
           {/* <div className="form-input">
