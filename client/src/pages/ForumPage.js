@@ -10,7 +10,7 @@ if (tempuser) {
   var userdata = JSON.parse(tempuser);
   userID = userdata.id;
   accessToken = userdata.access_token;
-} else var username = "";
+} else var UserID = "";
 
 class ForumPage extends React.Component {
   state = {
@@ -81,7 +81,7 @@ class ForumPage extends React.Component {
 
     return posts.map((post, index) => (
       <div key={index} className="blog-post-display">
-        // <h3>{post.user}:</h3>
+        <h3>{post.UserID}:</h3>
         <Linkify>
           <p>{post.description}</p>
         </Linkify>
