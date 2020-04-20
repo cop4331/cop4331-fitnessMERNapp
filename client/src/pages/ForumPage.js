@@ -28,7 +28,7 @@ class ForumPage extends React.Component {
       .get("http://my-gym-pro.herokuapp.com/api/getallposts")
       .then((response) => {
         const data = response.data;
-        this.setState({ posts: JSON.stringify(data) });
+        this.setState({ posts: JSON.stringify(data.Posts) });
         console.log("data received");
       })
       .catch(() => {
