@@ -81,7 +81,7 @@ class ForumPage extends React.Component {
     
     if (!posts.length) {
       console.log("error null posts arr", posts);
-     // return null;
+      return null;
     }
     console.log("display blog post");
     return posts.map((post, index) => (
