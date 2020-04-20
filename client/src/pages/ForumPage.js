@@ -86,7 +86,7 @@ class ForumPage extends React.Component {
 
     
   
-    return posts.map((post, index) => (
+    return JSON.parse(posts).map((post, index) => (
       <div key={index} className="blog-post-display">
         <h3>{post.user}:</h3>
         <Linkify>
