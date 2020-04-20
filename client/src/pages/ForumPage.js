@@ -28,7 +28,7 @@ class ForumPage extends React.Component {
       .get("http://my-gym-pro.herokuapp.com/api/getallposts")
       .then((response) => {
         const data = response.data;
-        this.setState({ posts: data });
+        this.setState({ posts: json.stringify(data) });
         console.log("data received");
       })
       .catch(() => {
@@ -79,7 +79,7 @@ class ForumPage extends React.Component {
   displayBlogPost = (posts) => {
     
     
-     if (!posts.posts) {
+     //if (posts.Posts.length) {
        //console.log("error null posts arr", posts);
        return null;
      }
