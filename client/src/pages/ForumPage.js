@@ -77,8 +77,10 @@ class ForumPage extends React.Component {
   };
 
   displayBlogPost = (posts) => {
-    if (!posts.length) return null;
-    
+    if (!posts.length) {
+      console.log("error null posts arr");
+      return null;
+    }
     console.log("display blog post");
     return posts.map((post, index) => (
       <div key={index} className="blog-post-display">
@@ -98,12 +100,12 @@ class ForumPage extends React.Component {
 
   render() {
     console.log("State: ", this.state);
-
+    console.log("test");
     //jsx
     return (
       <div className="app">
         <h2 className="title">Welcome to the Forum.</h2>
-        console.log("display blog post prior");
+        
         <div classname="blog-">{this.displayBlogPost(this.state.posts)}</div>
         <div className="user">
           <div className="signedinas">Signed in as: </div>
