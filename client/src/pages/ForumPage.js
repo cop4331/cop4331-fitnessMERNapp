@@ -109,7 +109,7 @@ class ForumPage extends React.Component {
 //           <p>{post.description}</p>
 //         </Linkify>
 //       </div>
-    ));
+//    ));
   };
 
   doLogout = (event) => {
