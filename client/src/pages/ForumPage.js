@@ -84,7 +84,7 @@ class ForumPage extends React.Component {
        return null;
      }
       
-    console.log("test");
+    
     
   
 //     return posts.map((post, index) => (
@@ -101,12 +101,14 @@ class ForumPage extends React.Component {
 //         <h3>{posts.userID[index]}:</h3>
 //       </div>
 //    ));
+   
+   console.log("test");
     
-   const post = Object.keys(posts.description).map((index) => (
+   const post = Object.keys(posts.Description).map((index) => (
       <div key={index}>
         <Linkify>
           //console.log("display description");
-          <p>{posts.description[index]}</p>
+          <p>{posts.Description[index]}</p>
         </Linkify>
       </div>
    ));
