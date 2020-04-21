@@ -85,7 +85,7 @@ class ForumPage extends React.Component {
      }
       
       
-     const entries = Object.entries(JSON.stringify(posts));
+     const entries = Object.entries(JSON.parse(posts));
      //const keys = Object.keys(posts);
 
      console.log(entries);
