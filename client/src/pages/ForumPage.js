@@ -99,9 +99,9 @@ class ForumPage extends React.Component {
     {Object.keys(posts).map(function(key) {
       return (
       <div className="blog-post-display">
-        <h3>{posts.userID}:</h3>
+        <h3>{posts.UserID[key]}:</h3>
        <Linkify>
-          <p>{posts.Description}</p>
+          <p>{posts.Description[key]}</p>
         </Linkify>
       </div>
       );})}
