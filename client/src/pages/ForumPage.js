@@ -96,7 +96,7 @@ class ForumPage extends React.Component {
 //       </div>
 //     ));
     
-     const name = Object.keys(posts.userID).map((index) => (
+     const name = Object.keys(posts).map((index) => (
       <div key={index}>
         <h3>{posts.userID}:</h3>
       </div>
