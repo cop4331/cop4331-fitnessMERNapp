@@ -95,12 +95,12 @@ class ForumPage extends React.Component {
 //         </Linkify>
 //       </div>
 //     ));
-      console.log(Object.Keys(posts).length);
-     const name = Object.keys(posts).map((index) => (
+      //console.log(Object.Keys(posts).length);
+     return Object.keys(posts).map((index) => (
       <div key={index} className="blog-post-display">
-        <h3>{posts.userID[index]}:</h3>
+        <h3>{posts.userID}:</h3>
        <Linkify>
-          <p>{posts.Description[index]}</p>
+          <p>{posts.Description}</p>
         </Linkify>
       </div>
    ));
