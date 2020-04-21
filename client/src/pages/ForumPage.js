@@ -96,14 +96,15 @@ class ForumPage extends React.Component {
 //       </div>
 //     ));
       //console.log(Object.Keys(posts).length);
-     return Object.keys(posts).map((index) => (
+    {Object.keys(posts).map(function(key) {
+      return (
       <div key={index} className="blog-post-display">
         <h3>{posts.userID[index]}:</h3>
        <Linkify>
           <p>{posts.Description[index]}</p>
         </Linkify>
       </div>
-   ));
+      );}}
 
     
 //    const post = Object.keys(posts).map((index) => (
