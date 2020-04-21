@@ -96,11 +96,11 @@ class ForumPage extends React.Component {
 //       </div>
 //     ));
     
-     const name = "" ;//Object.keys(posts.userID).map((index) => (
-//       <div key={index}>
-//         <h3>{posts.userID[index]}:</h3>
-//       </div>
-//    ));
+     const name = Object.keys(posts.userID).map((index) => (
+      <div key={index}>
+        <h3>{posts.userID}:</h3>
+      </div>
+   ));
    
    console.log("test");
     
@@ -114,8 +114,8 @@ class ForumPage extends React.Component {
     
     return (
       <div className="blog-post-display">
-      {name}
-      {post}
+        <div>{name}</div>
+        <div>{post}</div>
       </div>
     )
   };
