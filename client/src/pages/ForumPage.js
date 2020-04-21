@@ -80,7 +80,7 @@ class ForumPage extends React.Component {
     
     
      if (Object.keys(posts).length) {
-       //console.log("error null posts arr");
+       console.log("error null posts arr");
        return null;
      }
       
