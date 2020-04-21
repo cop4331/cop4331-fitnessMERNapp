@@ -84,43 +84,52 @@ class ForumPage extends React.Component {
        return null;
      }
       
+      
+     const entries = Object.entries(posts);
+     //const keys = Object.keys(posts);
+
+     console.log(entries);
+     const content ="";
+    for (const  [ID, id, User, user, Title, title, Entry, entry, Date, date] of entries) {
+      content.push(
+      <div>
+         <h3>{user}:</h3>
+         <Linkify>
+           <p>{entry}</p>
+         </Linkify>
+      </div>
+      );
+    }
     
     
+    return (
+      <div className="blog-post-display">
+      {content}
+      </div>
+    );
   
 //     return posts.map((post, index) => (
 //       <div key={index} className="blog-post-display">
-//         //<h3>{post.UserID}:</h3>
+//         <h3>{post.UserID}:</h3>
 //         <Linkify>
 //           <p>{post.Description}</p>
 //         </Linkify>
 //       </div>
 //     ));
       //console.log(Object.Keys(posts).length);
-    {Object.keys(posts).map(function(key) {
-      return (
-      <div className="blog-post-display">
-        <h3>{posts.UserID[key]}:</h3>
-       <Linkify>
-          <p>{posts.Description[key]}</p>
-        </Linkify>
-      </div>
-      );})}
-
     
-//    const post = Object.keys(posts).map((index) => (
-//       <div key={index}>
-//         <Linkify>
-//           <p>{posts.Description}</p>
+//     {Object.keys(posts).map(function(key) {
+//       return (
+//       <div className="blog-post-display">
+//         <h3>{posts.UserID[key]}:</h3>
+//        <Linkify>
+//           <p>{posts.Description[key]}</p>
 //         </Linkify>
 //       </div>
-//    ));
+//       );})}
+
     
-//     return (
-//       <div className="blog-post-display">
-//         <div>{name}</div>
-//         <div>{post}</div>
-//       </div>
-//     )
+
   };
 
   doLogout = (event) => {
