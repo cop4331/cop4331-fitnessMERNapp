@@ -80,42 +80,42 @@ class ForumPage extends React.Component {
     
     
      if (!Object.keys(posts).length) {
-       console.log("error null posts arr");
+       //console.log("error null posts arr");
        return null;
      }
       
       
-     const entries = Object.entries(JSON.parse(posts));
-     //const keys = Object.keys(posts);
+//      const entries = Object.entries(JSON.parse(posts));
+//      //const keys = Object.keys(posts);
 
-     console.log(entries);
-     const content ="";
-    for (const  [ID, id, User, user, Title, title, Entry, entry, Date, date] of entries) {
-      content.push(
-      <div>
-         <h3>{user}:</h3>
-         <Linkify>
-           <p>{entry}</p>
-         </Linkify>
-      </div>
-      );
-    }
-    
-    
-    return (
-      <div className="blog-post-display">
-      {content}
-      </div>
-    );
-  
-//     return posts.map((post, index) => (
-//       <div key={index} className="blog-post-display">
-//         <h3>{post.UserID}:</h3>
-//         <Linkify>
-//           <p>{post.Description}</p>
-//         </Linkify>
+//      console.log(entries);
+//      const content ="";
+//     for (const  [ID, id, User, user, Title, title, Entry, entry, Date, date] of entries) {
+//       content.push(
+//       <div>
+//          <h3>{user}:</h3>
+//          <Linkify>
+//            <p>{entry}</p>
+//          </Linkify>
 //       </div>
-//     ));
+//       );
+//     }
+    
+    
+//     return (
+//       <div className="blog-post-display">
+//       {content}
+//       </div>
+//     );
+  
+    return posts.map((post, index) => (
+      <div key={index} className="blog-post-display">
+        <h3>{post.UserID}:</h3>
+        <Linkify>
+          <p>{post.Description}</p>
+        </Linkify>
+      </div>
+    ));
       //console.log(Object.Keys(posts).length);
     
 //     {Object.keys(posts).map(function(key) {
@@ -146,7 +146,7 @@ class ForumPage extends React.Component {
       <div className="app">
         <h2 className="title">Welcome to the Forum.</h2>
         
-        <div classname="blog-">{this.displayBlogPost(this.state.posts)}</div>
+        <div classname="blog-">{this.displayBlogPost(JSON.parse(this.state.posts))}</div>
         <div className="user">
           <div className="signedinas">Signed in as: </div>
           <div className="profile">{userID}</div>
