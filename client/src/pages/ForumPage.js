@@ -104,7 +104,7 @@ class ForumPage extends React.Component {
           <p>{posts.Description[key]}</p>
         </Linkify>
       </div>
-      );}}
+      );})}
 
     
 //    const post = Object.keys(posts).map((index) => (
