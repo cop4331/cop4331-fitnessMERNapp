@@ -95,29 +95,31 @@ class ForumPage extends React.Component {
 //         </Linkify>
 //       </div>
 //     ));
-    
+      console.log(posts);
      const name = Object.keys(posts).map((index) => (
-      <div key={index}>
+      <div key={index} className="blog-post-display">
         <h3>{posts.userID}:</h3>
-      </div>
-   ));
-   
-   console.log("test");
-    
-   const post = Object.keys(posts).map((index) => (
-      <div key={index}>
-        <Linkify>
+       <Linkify>
           <p>{posts.Description}</p>
         </Linkify>
       </div>
    ));
+
     
-    return (
-      <div className="blog-post-display">
-        <div>{name}</div>
-        <div>{post}</div>
-      </div>
-    )
+//    const post = Object.keys(posts).map((index) => (
+//       <div key={index}>
+//         <Linkify>
+//           <p>{posts.Description}</p>
+//         </Linkify>
+//       </div>
+//    ));
+    
+//     return (
+//       <div className="blog-post-display">
+//         <div>{name}</div>
+//         <div>{post}</div>
+//       </div>
+//     )
   };
 
   doLogout = (event) => {
